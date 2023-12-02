@@ -4,6 +4,7 @@ const express = require("express");
 const path = require("path");
 
 const corsOptions = require("./config/corsOptions");
+const credentials = require("./middleware/credentials");
 const errorHandler = require("./middleware/errorHandler");
 const verifyJWT = require("./middleware/verifyJWT");
 const { logger } = require("./middleware/logEvents");
@@ -13,6 +14,8 @@ const PORT = process.env.PORT || 3500;
 
 // custom middleware logger
 app.use(logger);
+
+app.use(credentials);
 
 // Cross Origin Resource Sharing
 app.use(cors(corsOptions));
@@ -34,6 +37,7 @@ app.use("/", require("./routes/root"));
 app.use("/register", require("./routes/register"));
 app.use("/auth", require("./routes/auth"));
 app.use("/refresh", require("./routes/refresh"));
+app.use("/logout", require("./routes/logout"));
 
 app.use(verifyJWT);
 app.use("/employees", require("./routes/api/employees"));

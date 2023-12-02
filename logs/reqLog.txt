@@ -105,3 +105,15 @@
 20231202	18:01:47	49d29347-23f0-4b5d-9b5d-0fcee261b296	GET	undefined	/
 20231202	18:01:47	8476484e-e348-4be0-a248-23843ed66809	GET	undefined	/css/style.css
 20231202	18:01:52	80e7ac2a-2597-4494-891a-1c9755327c5b	GET	undefined	/employees
+20231202	18:57:04	7bef666e-433e-4dde-9827-4a359bb0c87d	POST	undefined	/auth
+20231202	18:58:04	45c7debf-0e42-4fd9-8740-8fec03119c62	GET	undefined	/refresh
+20231202	20:40:45	87aac796-6ecc-417d-87de-18c2a834fdaa	POST	undefined	/auth
+20231202	20:41:02	f31bdf0e-660d-4e8e-9a9e-275e251fb044	POST	undefined	/auth
+20231202	20:41:04	4c4ae8cf-3a3d-4be1-99da-621774067ba6	POST	undefined	/auth
+20231202	20:41:41	c94ad048-6a4b-4343-bcd3-e8e292dfa004	GET	undefined	/logout
+20231202	20:42:31	17f4a746-1153-46a4-bf9e-2f9044fd5a87	GET	undefined	/refresh
+20231202	20:43:58	be3488f4-db99-4f5f-98c6-194aa1e3ef18	GET	undefined	/refresh
+20231202	20:44:16	222caf0f-32f6-492b-9041-fea4247d2f59	POST	undefined	/auth
+20231202	20:44:23	213a1c30-cfd7-43ef-abed-754f48d8440d	GET	undefined	/refresh
+20231202	20:44:38	6b571215-0425-4068-9687-e98689c42a89	GET	undefined	/logout
+20231202	20:44:47	f864f296-28bb-4b64-a7ac-1a9e9613b74b	POST	undefined	/auth
