@@ -1,0 +1,5 @@
+20231203	17:04:07	eaef3260-32f8-4dde-b6b3-bea05a0e7dcb	TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle

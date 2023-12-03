@@ -8,7 +8,7 @@ const handleNewUser = async (req, res) => {
       .status(404)
       .json({ message: "Username and password are required." });
   }
-  const duplicate = await User.findOne({ username }).exec();
+  const duplicate = await User.findOne({ username });
   if (duplicate) {
     return res.sendStatus(409);
   }
