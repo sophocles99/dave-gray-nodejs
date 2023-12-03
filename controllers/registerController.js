@@ -21,13 +21,16 @@ const handleNewUser = async (req, res) => {
   }
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = { username, password: hashedPassword };
+    const newUser = {
+      username,
+      roles: { User: 2001 },
+      password: hashedPassword,
+    };
     usersDB.setUsers([...usersDB.users, newUser]);
     await fsPromises.writeFile(
       path.join(__dirname, "..", "model", "users.json"),
       JSON.stringify(usersDB.users)
     );
-    console.log(usersDB.users);
     res.status(201).json({ message: `New user ${username} created.` });
   } catch (error) {
     res.status(500).json({ message: error.message });
