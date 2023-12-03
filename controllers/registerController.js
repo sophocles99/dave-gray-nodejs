@@ -6,7 +6,7 @@ const handleNewUser = async (req, res) => {
   if (!username || !password) {
     return res
       .status(404)
-      .json({ message: "Username and password are required." });
+      .json({ message: "Username and password are required" });
   }
   const duplicate = await User.findOne({ username });
   if (duplicate) {
@@ -18,7 +18,7 @@ const handleNewUser = async (req, res) => {
       username,
       password: hashedPassword,
     });
-    res.status(201).json({ message: `New user ${username} created.` });
+    res.status(201).json({ message: `New user ${username} created` });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
