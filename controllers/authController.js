@@ -7,7 +7,7 @@ const handleLogin = async (req, res) => {
   if (!username || !password) {
     return res
       .status(404)
-      .json({ message: "Username and password are required." });
+      .json({ message: "Username and password are required" });
   }
   const foundUser = await User.findOne({ username });
   if (!foundUser) {
@@ -44,7 +44,7 @@ const handleLogin = async (req, res) => {
       secure: true,
       maxAge: 24 * 60 * 60 * 1000,
     });
-    res.json({ accessToken });
+    res.json({ accessToken, roles });
   } else {
     res.sendStatus(401);
   }
