@@ -1,4 +1,5 @@
 const Employee = require("../model/Employee");
+const { isValidObjectId } = require("mongoose");
 
 const getAllEmployees = async (req, res) => {
   const employees = await Employee.find({});
@@ -23,6 +24,9 @@ const updateEmployee = async (req, res) => {
   if (!req.body?.id) {
     return res.status(400).json({ message: "id is required" });
   }
+  if (!isValidObjectId(req.body.id)) {
+    return res.status(400).json({ message: "invalid id" });
+  }
   const employee = await Employee.findById(req.body.id);
   if (!employee) {
     return res
@@ -39,6 +43,9 @@ const deleteEmployee = async (req, res) => {
   if (!req.body?.id) {
     return res.status(400).json({ message: "id is required" });
   }
+  if (!isValidObjectId(req.body.id)) {
+    return res.status(400).json({ message: "invalid id" });
+  }
   const employee = await Employee.findByIdAndDelete(req.body.id);
   if (!employee) {
     return res
@@ -51,6 +58,9 @@ const deleteEmployee = async (req, res) => {
 const getEmployee = async (req, res) => {
   if (!req.params?.id) {
     return res.status(400).json({ message: "id parameter is required" });
+  }
+  if (!isValidObjectId(req.params.id)) {
+    return res.status(400).json({ message: "invalid id" });
   }
   const employee = await Employee.findById(req.params.id);
   if (!employee) {
